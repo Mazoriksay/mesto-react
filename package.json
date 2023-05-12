@@ -23,6 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/Mazoriksay/mesto-react.git"
   },
+  "homepage": "https://github.com/Mazoriksay/mesto-react#readme",
   "eslintConfig": {
     "extends": [
       "react-app",
