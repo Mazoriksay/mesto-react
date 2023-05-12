@@ -4,7 +4,7 @@ import {api} from '../utils/Api.js'
 import Card from './Card';
 
 
-function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick}) {
+function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, onTrashClick}) {
     const [userName, setUserName] = useState('');
     const [userDescription, setUserDescription] = useState('');
     const [userAvatar, setUserAvatar] = useState('');
@@ -41,6 +41,7 @@ function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick}) {
                             link={link}
                             likes={likes}
                             onCardClick={onCardClick}
+                            onTrashClick={onTrashClick}
                         />
                     ))}
                 </ul>

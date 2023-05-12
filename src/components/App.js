@@ -10,6 +10,7 @@ function App() {
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
     const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
     const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+    const [isDeletePlacePopupOpen, setIsDeletePlacePopupOpen] = useState(false);
     const [selectedCard, setSelectedCard] = useState(null)
     
     const handleEditProfileClick = () => {
@@ -23,11 +24,16 @@ function App() {
     const handleAddPlaceClick = () => {
         setIsAddPlacePopupOpen(true);
     }
+    
+    const handleDeletePlaceClick = () => {
+        setIsDeletePlacePopupOpen(true);
+    }
 
     const handleCloseAllPopups = () => {
         setIsEditProfilePopupOpen(false);
         setIsEditAvatarPopupOpen(false);
         setIsAddPlacePopupOpen(false);
+        setIsDeletePlacePopupOpen(false);
         setSelectedCard(null);
     }
 
@@ -45,6 +51,7 @@ function App() {
                 onEditAvatar={handleEditAvatarClick}
                 onAddPlace={handleAddPlaceClick}
                 onCardClick={handleCardClick}
+                onTrashClick={handleDeletePlaceClick}
             />
             <Footer />
             <PopupWithForm
@@ -100,35 +107,20 @@ function App() {
                     </>
                 }
             />
+            <PopupWithForm
+                name="delete"
+                title="Вы уверены?"
+                isOpen={isDeletePlacePopupOpen}
+                onClose={handleCloseAllPopups}
+                btnValue="Удалить"
+            />
+            
             <ImagePopup
                 image={selectedCard}
                 onClose={handleCloseAllPopups}
-            />
-              
-            
-              <div className="popup" id="popup-delete">
-                  <div className="popup__form-container popup-delete">
-                      <button className="popup__button-close" type="button"></button>
-                      <h2 className="popup__text">Вы уверены?</h2>
-                      <form className="popup__form" name="delete-form" id="delete-form" novalidate onkeypress="return event.keyCode != 13;">
-                          <input className="popup__button-save" id="delete-btn" type="submit" value="Да" /> 
-                      </form>
-                  </div>
-              </div>
-          </div>
-          <template id="card-template">
-                  <li className="list__card">
-                      <button className="list__remove" type="button"></button>
-                      <button className="list__button-image" type="button"><img className="list__image" src="#" alt="." /></button>
-                      <div className="list__container">
-                          <h2 className="list__text"></h2>
-                          <div className="list__like-container">
-                              <button className="list__like" type="button"></button>
-                              <p className="list__like-count">0</p>
-                          </div>
-                      </div>
-                  </li>
-          </template>
+            /> 
+             
+        </div>
     </div>
     );
 }
