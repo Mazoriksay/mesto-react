@@ -1,19 +1,19 @@
 import React from "react";
 
-function Card({name, link, likes, onCardClick, onTrashClick}) {
+function Card({card, onCardClick, onTrashClick}) {
     const handleCardClick = () => {
-        onCardClick({name, link})
+        onCardClick(card)
     }
     
     return (
-    <li class="list__card">
-        <button class="list__remove" type="button" onClick={onTrashClick}></button>
-        <button class="list__button-image" type="button" onClick={handleCardClick}><img class="list__image" src={link} alt={name}/></button>
-        <div class="list__container">
-            <h2 class="list__text">{name}</h2>
-            <div class="list__like-container">
-                <button class="list__like" type="button"></button>
-                <p class="list__like-count">{likes.length}</p>
+    <li className="list__card">
+        <button className="list__remove" type="button" onClick={onTrashClick}></button>
+        <button className="list__button-image" type="button" onClick={handleCardClick}><img className="list__image" src={card.link} alt={card.name}/></button>
+        <div className="list__container">
+            <h2 className="list__text">{card.name}</h2>
+            <div className="list__like-container">
+                <button className="list__like" type="button"></button>
+                <p className="list__like-count">{card.likes.length}</p>
             </div>
         </div>
     </li> 

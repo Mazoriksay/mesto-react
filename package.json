@@ -1,4 +1,5 @@
 {
+  "homepage": "https://mazoriksay.github.io/mesto-react",
   "name": "mesto-react",
   "version": "0.1.0",
   "private": true,
@@ -20,11 +21,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mazoriksay/mesto-react.git"
-  },
-  "homepage": "https://github.com/Mazoriksay/mesto-react#readme",
   "eslintConfig": {
     "extends": [
       "react-app",

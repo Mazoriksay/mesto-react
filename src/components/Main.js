@@ -35,11 +35,10 @@ function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, onTrashClic
             </section>
             <section className="gallery">
                 <ul className="list">
-                    {cards.map(({name, link, likes}) => (
+                    {cards.map((card) => (
                         <Card
-                            name={name}
-                            link={link}
-                            likes={likes}
+                            card={card}
+                            key={card._id}
                             onCardClick={onCardClick}
                             onTrashClick={onTrashClick}
                         />

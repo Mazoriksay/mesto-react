@@ -60,53 +60,50 @@ function App() {
                 btnValue="Cохранить"
                 isOpen={isEditProfilePopupOpen}
                 onClose={handleCloseAllPopups}
-                children={
-                    <>
-                        <label className="popup__field"> 
-                            <input id="name-input" className="popup__input" type="text" name="name" placeholder="Ваше имя" required="true" minlength="2" maxlength="40" />
-                            <span className="popup__input-error name-input-error"></span>
-                        </label>
-                        <label className="popup__field">
-                            <input id="about-input" className="popup__input" type="text" name="about" placeholder="Чем вы занимаетесь" required="true" minlength="2" maxlength="200" />
-                            <span className="popup__input-error about-input-error"></span>
-                        </label>
-                     </>
-                }
-            />
+            >
+                <>
+                    <label className="popup__field"> 
+                        <input id="name-input" className="popup__input" type="text" name="name" placeholder="Ваше имя" required={true} minLength="2" maxLength="40" />
+                        <span className="popup__input-error name-input-error"></span>
+                    </label>
+                    <label className="popup__field">
+                        <input id="about-input" className="popup__input" type="text" name="about" placeholder="Чем вы занимаетесь" required={true} minLength="2" maxLength="200" />
+                        <span className="popup__input-error about-input-error"></span>
+                    </label>
+                </>
+            </PopupWithForm>
             <PopupWithForm
                 name="avatar"
                 title="Обновить Аватар"
                 isOpen={isEditAvatarPopupOpen}
                 onClose={handleCloseAllPopups}
                 btnValue="Сохранить"
-                children={
-                    <>
-                        <label className="popup__field">
-                            <input id="link-input-avatar" className="popup__input" type="url" name="avatar" placeholder="Ссылка на картинку" required="true" minlength="1" />
-                            <span className="popup__input-error link-input-avatar-error"></span>
-                        </label>   
-                    </>
-                }
-            />
+            >
+                <>
+                    <label className="popup__field">
+                        <input id="link-input-avatar" className="popup__input" type="url" name="avatar" placeholder="Ссылка на картинку" required={true} minLength="1" />
+                        <span className="popup__input-error link-input-avatar-error"></span>
+                    </label>   
+                </>
+            </PopupWithForm>
             <PopupWithForm
                 name="card"
                 title="Новое Место"
                 isOpen={isAddPlacePopupOpen}
                 onClose={handleCloseAllPopups}
                 btnValue="Создать"
-                children={
-                    <>
-                        <label className="popup__field">
-                            <input id="place-input" className="popup__input" type="text" name="name" placeholder="Название" required="true" minlength="2" maxlength="30" />
-                            <span className="popup__input-error place-input-error"></span>
-                        </label>
-                        <label className="popup__field">
-                            <input id="link-input-img" className="popup__input" type="url" name="link" placeholder="Ссылка на картинку" required="true" minlength="1" />
-                            <span className="popup__input-error link-input-img-error"></span>
-                        </label>
-                    </>
-                }
-            />
+            >
+                 <>
+                    <label className="popup__field">
+                        <input id="place-input" className="popup__input" type="text" name="name" placeholder="Название" required={true} minLength="2" maxLength="30" />
+                        <span className="popup__input-error place-input-error"></span>
+                    </label>
+                    <label className="popup__field">
+                        <input id="link-input-img" className="popup__input" type="url" name="link" placeholder="Ссылка на картинку" required={true} minLength="1" />
+                        <span className="popup__input-error link-input-img-error"></span>
+                    </label>
+                </>
+            </PopupWithForm>
             <PopupWithForm
                 name="delete"
                 title="Вы уверены?"
