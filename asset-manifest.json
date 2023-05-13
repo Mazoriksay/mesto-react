@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Mazoriksay/mesto-react/static/css/main.57265f85.css",
-    "main.js": "/Mazoriksay/mesto-react/static/js/main.58e5aceb.js",
+    "main.css": "/Mazoriksay/mesto-react/static/css/main.3b1870d0.css",
+    "main.js": "/Mazoriksay/mesto-react/static/js/main.c04ea0c0.js",
     "static/js/787.5530211c.chunk.js": "/Mazoriksay/mesto-react/static/js/787.5530211c.chunk.js",
     "static/media/Inter-Medium.woff": "/Mazoriksay/mesto-react/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
     "static/media/Inter-Black.woff": "/Mazoriksay/mesto-react/static/media/Inter-Black.c6938660eec019fefd68.woff",
@@ -19,12 +19,12 @@
     "static/media/profile__edit.svg": "/Mazoriksay/mesto-react/static/media/profile__edit.af236f6cf67005f1d7aa.svg",
     "static/media/profile__avatar.svg": "/Mazoriksay/mesto-react/static/media/profile__avatar.ae1a976ddb506239e9f0.svg",
     "static/media/popup__button-close.svg": "/Mazoriksay/mesto-react/static/media/popup__button-close.039f1f5203f653b4bacd.svg",
-    "main.57265f85.css.map": "/Mazoriksay/mesto-react/static/css/main.57265f85.css.map",
-    "main.58e5aceb.js.map": "/Mazoriksay/mesto-react/static/js/main.58e5aceb.js.map",
+    "main.3b1870d0.css.map": "/Mazoriksay/mesto-react/static/css/main.3b1870d0.css.map",
+    "main.c04ea0c0.js.map": "/Mazoriksay/mesto-react/static/js/main.c04ea0c0.js.map",
     "787.5530211c.chunk.js.map": "/Mazoriksay/mesto-react/static/js/787.5530211c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57265f85.css",
-    "static/js/main.58e5aceb.js"
+    "static/css/main.3b1870d0.css",
+    "static/js/main.c04ea0c0.js"
   ]
 }
