@@ -24,11 +24,11 @@ function App() {
     
     useEffect(() => {
         api.getUserInfo()
-            .then(res => {
-                setCurrentUser(res);
-            })
-            .catch((err) => console.log(err));
-    });
+        .then(res => {
+            setCurrentUser(res);
+        })
+        .catch((err) => console.log(err));
+    }, []);
 
     useEffect(() => {
         Promise.all([api.getInitialCards()])
@@ -137,7 +137,7 @@ function App() {
                     /> */}
                     
                     <ImagePopup
-                        image={selectedCard}
+                        card={selectedCard}
                         onClose={handleCloseAllPopups}
                     /> 
                     

@@ -11,7 +11,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
     useEffect(() => {
         setName(currentUser.name);
         setDescription(currentUser.about);
-      }, [currentUser]);
+    }, [currentUser, isOpen]);
     
  
     const handleNameChange = (evt) => setName(evt.target.value);
@@ -35,38 +35,36 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             onClose={onClose}
             onSubmit={handleSubmit}
         >
-            <>
-                <label className="popup__field"> 
-                    <input 
-                        id="name-input" 
-                        className="popup__input" 
-                        type="text" 
-                        name="name" 
-                        placeholder="Ваше имя" 
-                        required={true} 
-                        minLength="2" 
-                        maxLength="40" 
-                        value={name || ''}
-                        onChange={handleNameChange}
-                    />
-                    <span className="popup__input-error name-input-error"></span>
-                </label>
-                <label className="popup__field">
-                    <input 
-                        id="about-input" 
-                        className="popup__input" 
-                        type="text" 
-                        name="about" 
-                        placeholder="Чем вы занимаетесь" 
-                        required={true} 
-                        minLength="2" 
-                        maxLength="200" 
-                        value={description || ''}
-                        onChange={handleDescriptionChange}
-                    />
-                    <span className="popup__input-error about-input-error"></span>
-                </label>
-            </>
+            <label className="popup__field"> 
+                <input 
+                    id="name-input" 
+                    className="popup__input" 
+                    type="text" 
+                    name="name" 
+                    placeholder="Ваше имя" 
+                    required={true} 
+                    minLength="2" 
+                    maxLength="40" 
+                    value={name || ''}
+                    onChange={handleNameChange}
+                />
+                <span className="popup__input-error name-input-error"></span>
+            </label>
+            <label className="popup__field">
+                <input 
+                    id="about-input" 
+                    className="popup__input" 
+                    type="text" 
+                    name="about" 
+                    placeholder="Чем вы занимаетесь" 
+                    required={true} 
+                    minLength="2" 
+                    maxLength="200" 
+                    value={description || ''}
+                    onChange={handleDescriptionChange}
+                />
+                <span className="popup__input-error about-input-error"></span>
+            </label>
         </PopupWithForm>
     )
 }

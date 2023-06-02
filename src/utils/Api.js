@@ -11,69 +11,73 @@
         return Promise.reject(`Ошибка: ${res.status}`);
     }
 
+    _request(url, options) {
+        return fetch(this._baseUrl + url, options).then(this._checkStatus);
+    }
+
     getUserInfo() {
-        return fetch(`${this._baseUrl}/users/me`, {
+        return this._request(`/users/me`, {
             headers: this._headers
-        }).then(this._checkStatus); 
+        });
     }
 
     getInitialCards() {
-        return fetch(`${this._baseUrl}/cards`, {
+        return this._request(`/cards`,  {
             headers: this._headers
-        }).then(this._checkStatus);
+        });
     }
 
     setProfileInfo({name, about}) {
-        return fetch(`${this._baseUrl}/users/me`, {
+       return this._request(`/users/me`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
                 name: name,
                 about: about
             })
-        }).then(this._checkStatus);
+        });
     }
 
     addNewCard({name, link}) {
-        return fetch(`${this._baseUrl}/cards`, {
+        return this._request(`/cards`, {
             method: 'POST', 
             headers: this._headers,
             body: JSON.stringify({
                 name: name,
                 link: link
             })
-        }).then(this._checkStatus);
+        });
     }
 
     setLikeCount(id) {
-        return fetch(`${this._baseUrl}/cards/likes/${id}`, {
+        return this._request(`/cards/likes/${id}`, {
             method: 'PUT',
             headers: this._headers
-        }).then(this._checkStatus);
+        });
     }
 
     deleteLikeCount(id) {
-        return fetch(`${this._baseUrl}/cards/likes/${id}`, {
+        return this._request(`/cards/likes/${id}`, {
             method: 'DELETE',
             headers: this._headers
-        }).then(this._checkStatus);
+        });
     }
 
     deleteCard(id) {
-        return fetch(`${this._baseUrl}/cards/${id}`, {
+        return this._request(`/cards/${id}`, {
             method: 'DELETE',
             headers: this._headers
-        }).then(this._checkStatus);
+        });
     }
 
     setAvatar(data) {
-        return fetch(`${this._baseUrl}/users/me/avatar`, {
+       return this._request(`/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
                 avatar: data.avatar
             })
-        }).then(this._checkStatus);
+        });
     }
 
     changeLikeCardStatus(id, isLiked) {

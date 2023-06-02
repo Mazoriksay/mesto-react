@@ -1,4 +1,4 @@
-import { useRef } from "react"; 
+import { useRef, useEffect } from "react"; 
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace }) { 
@@ -12,10 +12,13 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
             name: placeReferal.current.value,
             link: linkReferal.current.value
         });
-        
+    }
+
+    useEffect(() => {
         placeReferal.current.value = '';
         linkReferal.current.value = '';
-    }
+    }, [isOpen]);
+
     return (
         <PopupWithForm
             name="card"
@@ -25,35 +28,33 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
             onSubmit={handleSubmit}
             btnValue="Создать"
         >
-            <>
-                <label className="popup__field">
-                    <input 
-                        id="place-input" 
-                        className="popup__input" 
-                        type="text" 
-                        name="name" 
-                        placeholder="Название" 
-                        required={true} 
-                        minLength="2" 
-                        maxLength="30" 
-                        ref={placeReferal}
-                    />
-                    <span className="popup__input-error place-input-error"></span>
-                </label>
-                <label className="popup__field">
-                    <input 
-                        id="link-input-img" 
-                        className="popup__input" 
-                        type="url" 
-                        name="link" 
-                        placeholder="Ссылка на картинку" 
-                        required={true} 
-                        minLength="1"
-                        ref={linkReferal} 
-                    />
-                    <span className="popup__input-error link-input-img-error"></span>
-                </label>
-            </>
+            <label className="popup__field">
+                <input 
+                    id="place-input" 
+                    className="popup__input" 
+                    type="text" 
+                    name="name" 
+                    placeholder="Название" 
+                    required={true} 
+                    minLength="2" 
+                    maxLength="30" 
+                    ref={placeReferal}
+                />
+                <span className="popup__input-error place-input-error"></span>
+            </label>
+            <label className="popup__field">
+                <input 
+                    id="link-input-img" 
+                    className="popup__input" 
+                    type="url" 
+                    name="link" 
+                    placeholder="Ссылка на картинку" 
+                    required={true} 
+                    minLength="1"
+                    ref={linkReferal} 
+                />
+                <span className="popup__input-error link-input-img-error"></span>
+            </label>
         </PopupWithForm>
     )
 }
